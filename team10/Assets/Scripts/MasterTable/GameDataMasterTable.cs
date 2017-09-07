@@ -12,20 +12,15 @@ public class GameDataMaster : MasterBase
 {
     public override void Load(string[] elements)
     {
-        int id = 0;
-        int.TryParse(elements[0], out id);
-        ID = id;
+        Name = elements[0];
+        Text = elements[1];
 
         int eventId = 0;
-        int.TryParse(elements[1], out eventId);
+        int.TryParse(elements[2], out eventId);
         EventID = eventId;
-
-        Name = elements[2];
-        Text = elements[3];
     }
-
-    public int ID { get; private set; }         // 連番で割り振られるユニークな番号
-    public int EventID { get; private set; }    // 生成するイベントID 
-    public string Name { get; private set; }    // 話すキャラの名前 
-    public string Text { get; private set; }    // 話すテキスト
+    
+    public string  Name    { get; private set; }    // 話すキャラの名前 
+    public string  Text    { get; private set; }    // 話すテキスト
+    public int     EventID { get; private set; }    // 生成するイベントID 
 }
