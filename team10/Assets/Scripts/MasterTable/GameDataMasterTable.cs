@@ -13,7 +13,7 @@ public class GameDataMaster : MasterBase
     public override void Load(string[] elements)
     {
         Name = elements[0];
-        Text = elements[1];
+        Message = elements[1];
 
         int eventId = 0;
         int.TryParse(elements[2], out eventId);
@@ -21,6 +21,6 @@ public class GameDataMaster : MasterBase
     }
     
     public string  Name    { get; private set; }    // 話すキャラの名前 
-    public string  Text    { get; private set; }    // 話すテキスト
+    public string  Message { get; private set; }    // 話すテキスト
     public int     EventID { get; private set; }    // 生成するイベントID 
 }
