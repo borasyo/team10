@@ -90,11 +90,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\EventBase.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Animation\TextAnimator.cs" />
+    <Compile Include="Assets\Scripts\Character\CharacterManager.cs" />
+    <Compile Include="Assets\Scripts\Event\EventBase.cs" />
+    <Compile Include="Assets\Scripts\Event\IineEffect.cs" />
+    <Compile Include="Assets\Scripts\Game\GameController.cs" />
+    <Compile Include="Assets\Scripts\Game\GameDefine.cs" />
     <Compile Include="Assets\Scripts\MasterTable\GameDataMasterTable.cs" />
     <Compile Include="Assets\Scripts\MasterTable\MasterTableBase.cs" />
-    <Compile Include="Assets\Scripts\TextAnimator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\UniRx\ReadMe.txt" />
