@@ -6,7 +6,16 @@ public class EventBase : MonoBehaviour
 {
     // Event終了フラグ
     private bool _end = false;
-    public bool EventEnd { get { return _end; } protected set { _end = value; } }
+    public bool EventEnd {
+        get {
+            return _end;
+        }
+
+        protected set{
+            _end = value;
+            CharacterManager.Instance.ChangeIdleChara(_name);
+        }
+    }
 
     // Event再生キャラの名前
     protected string _name;
@@ -19,6 +28,8 @@ public class EventBase : MonoBehaviour
     public void Init(string name)
     {
         _name = name;
+        CharacterManager.Instance.ChangeAtackChara(_name);
+        transform.position = CharacterManager.Instance.GetCharacter(_name).position;
     }
 
     /// <summary>

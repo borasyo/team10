@@ -92,8 +92,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Animation\TextAnimator.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterManager.cs" />
+    <Compile Include="Assets\Scripts\Effect\IineEffect.cs" />
+    <Compile Include="Assets\Scripts\Effect\TeacupEffect.cs" />
     <Compile Include="Assets\Scripts\Event\EventBase.cs" />
-    <Compile Include="Assets\Scripts\Event\IineEffect.cs" />
     <Compile Include="Assets\Scripts\Game\GameController.cs" />
     <Compile Include="Assets\Scripts\Game\GameDefine.cs" />
     <Compile Include="Assets\Scripts\MasterTable\GameDataMasterTable.cs" />

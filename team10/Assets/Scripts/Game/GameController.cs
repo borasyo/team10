@@ -67,6 +67,7 @@ public class GameController : MonoBehaviour
                 eventBase.Init(data.Name);
                 Debug.Log(eventBase.name + "再生");
                 yield return new WaitWhile(() => !eventBase.EventEnd);
+                Destroy(eventBase.gameObject);
             }
             // 再生しない場合、1秒だけ待つ
             else

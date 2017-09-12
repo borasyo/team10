@@ -12,8 +12,6 @@ public class IineEffect : EventBase
     /// </summary>
     void Start ()
     {
-        CharacterManager.Instance.ChangeAtackChara(_name);
-        transform.position = CharacterManager.Instance.GetCharacter(_name).position;
         _effect = GetComponentInChildren<ParticleSystem>();
 	}
 
@@ -26,7 +24,6 @@ public class IineEffect : EventBase
             return;
 
         // 終了
-        CharacterManager.Instance.ChangeIdleChara(_name);
         EventEnd = true;
     }
 }
