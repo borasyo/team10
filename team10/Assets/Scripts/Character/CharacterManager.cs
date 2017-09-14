@@ -69,16 +69,16 @@ public class CharacterManager : MonoBehaviour
             case GameDefine.Bora:
                 index = 0;
                 break;
-            case GameDefine.Yukka:
+            case GameDefine.Kouchan:
                 index = 1;
                 break;
-            case GameDefine.Ran:
+            case GameDefine.Yukka:
                 index = 2;
                 break;
-            case GameDefine.Kuririn:
+            case GameDefine.Ran:
                 index = 3;
                 break;
-            case GameDefine.Kouchan:
+            case GameDefine.Kuririn:
                 index = 4;
                 break;
             case GameDefine.Bahha:
