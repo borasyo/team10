@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TeacupEffect : EventBase
 {
+    [SerializeField] float _speed = 2.0f;
     [SerializeField] GameObject _teaCup = null;
     [SerializeField] GameObject _healEffectPrefab = null;
 
@@ -24,11 +25,13 @@ public class TeacupEffect : EventBase
         float time = 0.0f;
         Vector3 targetPos = CharacterManager.Instance.GetCharacter(GameDefine.Soyaman).position;
         Vector3 startPos = transform.position;
+        transform.eulerAngles = new Vector3(0, 0, Mathf.Atan2(targetPos.y - startPos.y, targetPos.x - startPos.x) * Mathf.Rad2Deg - 180);
         
         while (time < 1.0f)
         {
-            time += Time.deltaTime;
+            time += Time.deltaTime * _speed;
             transform.position = Vector3.Lerp(startPos, targetPos, time);
+            //transform.eulerAngles += new Vector3(0,0,12);
             yield return null;
         }
 
