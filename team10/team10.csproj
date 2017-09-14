@@ -90,9 +90,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AssetsStore\Elementals\Demo\Scripts\GE_Elementals_Demo.cs" />
     <Compile Include="Assets\Scripts\Animation\TextAnimator.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterManager.cs" />
+    <Compile Include="Assets\Scripts\Effect\AllAtack.cs" />
+    <Compile Include="Assets\Scripts\Effect\BezierCurve.cs" />
+    <Compile Include="Assets\Scripts\Effect\HappyEffect.cs" />
     <Compile Include="Assets\Scripts\Effect\IineEffect.cs" />
+    <Compile Include="Assets\Scripts\Effect\SoccerEffect.cs" />
     <Compile Include="Assets\Scripts\Effect\TeacupEffect.cs" />
     <Compile Include="Assets\Scripts\Event\EventBase.cs" />
     <Compile Include="Assets\Scripts\Game\GameController.cs" />
@@ -101,6 +106,7 @@
     <Compile Include="Assets\Scripts\MasterTable\MasterTableBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\AssetsStore\Elementals\Readme.txt" />
     <None Include="Assets\Plugins\UniRx\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
