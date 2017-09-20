@@ -31,6 +31,10 @@ public class TextAnimator : MonoBehaviour
     /// </summary>
     public IEnumerator Run(string message)
     {
+        // 初回リセット
+        _text.text = "";
+
+        // アニメーション実行！
         int loopCount = 0;
         while(loopCount < message.Length)
         {

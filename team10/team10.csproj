@@ -91,12 +91,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AssetsStore\Elementals\Demo\Scripts\GE_Elementals_Demo.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Demo\Assets\CFX3_AutoStopLoopedEffect.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Demo\Assets\CFX3_Demo.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Demo\Assets\CFX3_Demo_Translate.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Scripts\CFX_AutodestructWhenNoChildren.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Scripts\CFX_ShurikenThreadFix.cs" />
+    <Compile Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" />
     <Compile Include="Assets\Scripts\Animation\TextAnimator.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterManager.cs" />
     <Compile Include="Assets\Scripts\Effect\AllAtack.cs" />
     <Compile Include="Assets\Scripts\Effect\BezierCurve.cs" />
     <Compile Include="Assets\Scripts\Effect\HappyEffect.cs" />
     <Compile Include="Assets\Scripts\Effect\IineEffect.cs" />
+    <Compile Include="Assets\Scripts\Effect\NoteRainEffect.cs" />
     <Compile Include="Assets\Scripts\Effect\SoccerEffect.cs" />
     <Compile Include="Assets\Scripts\Effect\TeacupEffect.cs" />
     <Compile Include="Assets\Scripts\Event\EventBase.cs" />
@@ -107,6 +121,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AssetsStore\Elementals\Readme.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\!JMO Assets Readme.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\CartoonFX Readme.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\CartoonFX Releases Notes.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\CartoonFX3 Readme.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_WaterWiggle.shader" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Shaders\CFX3 Invert.shader" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
     <None Include="Assets\Plugins\UniRx\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

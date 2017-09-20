@@ -330,6 +330,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AssetsStore\Elementals\Readme.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\!JMO Assets Readme.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\CartoonFX Readme.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\CartoonFX Releases Notes.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\CartoonFX3 Readme.txt" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_WaterWiggle.shader" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Shaders\CFX3 Invert.shader" />
+    <None Include="Assets\AssetsStore\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
     <None Include="Assets\Plugins\UniRx\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
