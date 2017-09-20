@@ -32,7 +32,8 @@ public class CommentDataMaster : MasterBase
         FlowingTime = float.Parse(elements[2]);
         Comment = elements[3];
         CommentColor = ColorParser.ToColorOrWhite(elements[4]);
-        IsBold = bool.Parse(elements[5]);
+        bool tempBool;
+        IsBold = bool.TryParse(elements[5], out tempBool);
     }
     public int ActionID { get; private set; }
     public float TimeToFlow { get; private set; } //流れるのにかかる時間
