@@ -101,7 +101,7 @@ public class CharacterManager : MonoBehaviour
     private void LoadChara()
     {
         string path = "Texture/Character/";
-        string[] resourceName = new string[7] { "bora", "yukka", "ran", "kuririn", "kouchan", "bahha", "soyaman" };
+        string[] resourceName = new string[7] { "bora", "kouchan", "yukka", "ran", "kuririn",  "bahha", "soyaman" };
 
         for (int i = 0; i < 7; i++)
         {
@@ -118,9 +118,6 @@ public class CharacterManager : MonoBehaviour
     {
         int index = GetIndex(name);
         _nowCharaSpRend[index].sprite = _charaSprite[index];
-
-        // TODO ; 見やすくするため 
-        _nowCharaSpRend[index].color = Color.white;
     }
 
     /// <summary>
@@ -130,9 +127,6 @@ public class CharacterManager : MonoBehaviour
     {
         int index = GetIndex(name);
         _nowCharaSpRend[index].sprite = _charaAtackSprite[index];
-
-        // TODO ; 見やすくするため 
-        _nowCharaSpRend[index].color = Color.red;
     }
 
     #endregion
