@@ -53,7 +53,7 @@ public class CommentManager : MonoBehaviour
     {
         var commentDataMasterTavle = new CommentDataMasterTable();
         commentDataMasterTavle.LoadObservable.Subscribe(_ =>
-        {
+        { 
             foreach (CommentDataMaster master in commentDataMasterTavle.All)
             {
                 commentDatas.Add(master);

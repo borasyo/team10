@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UniRx;
 
 public class GameController : MonoBehaviour
 {
@@ -20,13 +21,27 @@ public class GameController : MonoBehaviour
     /// <summary>
     /// 生成時処理
     /// </summary>
-    private void Awake ()
-    { 
+    private void Awake()
+    {
+        StartCoroutine(Init());
+    }
+
+    /// <summary>
+    /// 初期化処理
+    /// </summary>
+    private IEnumerator Init()
+    {
         // データを読み込む
         GameDataMasterTable masterTable = new GameDataMasterTable();
         masterTable.Load();
 
-        // キューに格納
+        // Commentデータ読み込み
+        CommentManager.Instance.Load();
+
+        // TODO : 仮のロード待ち
+        yield return new WaitForSeconds(0.5f);
+
+        // シナリオマスターをキューに格納
         foreach (GameDataMaster master in masterTable.All)
         {
             _gameDataQueue.Enqueue(master);
@@ -46,6 +61,7 @@ public class GameController : MonoBehaviour
     private IEnumerator GameLoop ()
     {
         Debug.Log("開始");
+        yield return new WaitForSeconds(1.0f);
 
         // 上から順に実行
         while (_gameDataQueue.Count > 0)
@@ -53,18 +69,31 @@ public class GameController : MonoBehaviour
             GameDataMaster data = _gameDataQueue.Dequeue();
             _name.text = data.Name;
 
+            // コメント再生
+            CommentManager.Instance.InitComments(data.UniqueID);
+
             // メッセージはアニメーションさせる
-            var messageAnimation = StartCoroutine(_message.Run(data.Message));
-            Debug.Log(data.Name + "のセリフ再生");
-            yield return messageAnimation;
-            Debug.Log(data.Name + "のセリフ終了");
+            if (data.EventID != 6)
+            {
+                var messageAnimation = StartCoroutine(_message.Run(data.Message));
+                Debug.Log(data.Name + "のセリフ再生");
+                yield return messageAnimation;
+                Debug.Log(data.Name + "のセリフ終了");
+            }
 
             // イベントがあれば再生し、再生終了を待つ
             if (data.EventID >= 0)
             {
                 var eventPrefab = Resources.Load(string.Format(EventPrefabPath, data.EventID.ToString())) as GameObject;
                 var eventBase = Instantiate(eventPrefab).GetComponent<EventBase>();
-                eventBase.Init(data.Name);
+                eventBase.Init(data.Name, data.EventID == 6);
+
+                // 行動選択イベント
+                if (data.EventID == 6)
+                { 
+                    eventBase.GetComponent<ActionSelect>().Time = float.Parse(data.Message);
+                }
+
                 Debug.Log(eventBase.name + "再生");
                 yield return new WaitWhile(() => !eventBase.EventEnd);
                 Destroy(eventBase.gameObject);

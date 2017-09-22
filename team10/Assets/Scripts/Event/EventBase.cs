@@ -25,9 +25,13 @@ public class EventBase : MonoBehaviour
     /// <summary>
     /// 初期化処理
     /// </summary>
-    public void Init(string name)
+    public void Init(string name, bool isNotChange = false)
     {
         _name = name;
+
+        if (isNotChange)
+            return;
+
         CharacterManager.Instance.ChangeAtackChara(_name);
         transform.position = CharacterManager.Instance.GetCharacter(_name).position;
     }

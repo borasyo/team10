@@ -25,6 +25,8 @@ public class AllAtack : EventBase
     { 
         List<Coroutine> _allList = new List<Coroutine>();
 
+        _allList.Add(StartCoroutine(PlayEffect(GameDefine.Bahha, 4)));
+        yield return new WaitForSeconds(_interval);
         _allList.Add(StartCoroutine(PlayEffect(GameDefine.Ran, 0)));
         yield return new WaitForSeconds(_interval);
         _allList.Add(StartCoroutine(PlayEffect(GameDefine.Kuririn, 1)));

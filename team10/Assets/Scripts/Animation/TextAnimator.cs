@@ -36,20 +36,26 @@ public class TextAnimator : MonoBehaviour
 
         // アニメーション実行！
         int loopCount = 0;
-        while(loopCount < message.Length)
+        while (loopCount < message.Length)
         {
             // テキストを更新
             _text.text = message.Substring(0, loopCount);
 
             // SEあれば再生
-            if(_se)
+            if (_se)
                 _se.Play();
 
             // 指定秒数待ち、カウントを増加
             yield return new WaitForSeconds(_interval);
-            loopCount ++;
+            loopCount++;
         }
+    }
 
-        yield break;
+    /// <summary>
+    /// アニメーションなしで文字列を変更
+    /// </summary>
+    public void DirectInsertMassage(string message)
+    {
+        _text.text = message;
     }
 }
