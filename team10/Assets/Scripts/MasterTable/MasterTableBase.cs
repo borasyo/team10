@@ -10,9 +10,15 @@ public class MasterTableBase<T> where T : MasterBase, new()
     protected List<T> masters;
     public List<T> All { get { return masters; } }
 
-    public void Load(string filePath)
+    public IEnumerator LoadCourutine(string URL)
     {
-        var text = ((TextAsset)Resources.Load(filePath, typeof(TextAsset))).text;
+        Debug.Log("a");
+        var www = new WWW(URL);
+        yield return www;
+
+        var text = www.text;
+        //var text = ((TextAsset)Resources.Load(filePath, typeof(TextAsset))).text;
+
         text = text.Trim().Replace("\r", "") + "\n";
         var lines = text.Split('\n').ToList();
 

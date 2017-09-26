@@ -25,7 +25,7 @@ public class CommentTableBase<T> where T : MasterBase, new()
 
         var text = www.text;
 
-		text = text.Trim().Replace("\r", "") + "\n";
+        text = text.Trim().Replace("\r", "") + "\n";
 		var lines = text.Split('\n').ToList();
 
 		// header

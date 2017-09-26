@@ -5,9 +5,11 @@ using UniRx;
 
 public class GameDataMasterTable : MasterTableBase<GameDataMaster>
 {
-    private static readonly string FilePath = "GameData";
+    //private static readonly string FilePath = "GameData";
+    private static readonly string URL = 
+        "https://docs.google.com/spreadsheets/d/11owPBwoc1Pbpr0AP1crpBQ3qPW9Qrc1Nh_um2sj8Xn0/export?format=csv";
 
-    public void Load() { Load(FilePath); }
+    public void Load() { CoroutineHandler.StartStaticCoroutine(LoadCourutine(URL)); }
 }
 
 public class GameDataMaster : MasterBase

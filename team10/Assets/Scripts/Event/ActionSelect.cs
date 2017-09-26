@@ -42,7 +42,7 @@ public class ActionSelect : EventBase
             if (remainTime >= max)
             {
                 waitTime = Random.Range(min, max);
-                index += Random.Range(-1, 2);
+                index += Random.Range(0, 2) == 0 ? -1 : 1;
                 if (index < 0) index = 0;
                 else if (index > 2) index = 2;
             }
