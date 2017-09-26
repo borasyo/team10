@@ -12,7 +12,7 @@ public class NoteRainEffect : EventBase
     void Start () 
     {
         _effect = GetComponentInChildren<ParticleSystem>();
-        transform.position -= new Vector3(7,0,0);
+        transform.position = new Vector3(-0.77f, -0.5f, 0);
 	}
 
     /// <summary>

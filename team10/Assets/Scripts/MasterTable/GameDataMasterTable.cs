@@ -6,13 +6,8 @@ using UniRx;
 public class GameDataMasterTable : MasterTableBase<GameDataMaster>
 {
     private static readonly string FilePath = "GameData";
-    //private static readonly string URL = "https://docs.google.com/spreadsheets/d/11owPBwoc1Pbpr0AP1crpBQ3qPW9Qrc1Nh_um2sj8Xn0/edit#gid=0";
 
     public void Load() { Load(FilePath); }
-    /*public void Load()
-    {
-        Observable.FromCoroutine(() => Load(URL)).Subscribe();
-    }*/
 }
 
 public class GameDataMaster : MasterBase

@@ -16,6 +16,9 @@ public class GameController : MonoBehaviour
     [SerializeField] Text _name = null;
     [SerializeField] TextAnimator _message = null;
 
+    // 行動を行うキャラの立ち位置
+    [SerializeField] Transform _actionPos = null;
+
     #region unity_event
 
     /// <summary>
@@ -84,6 +87,19 @@ public class GameController : MonoBehaviour
             // イベントがあれば再生し、再生終了を待つ
             if (data.EventID >= 0)
             {
+                Transform actionChara = CharacterManager.Instance.GetCharacter(data.Name);
+                Vector3 initPos = actionChara.position;
+                if (data.EventID < 6)
+                {
+                    float time = 0.0f;
+                    while (time < 1.0f)
+                    {
+                        actionChara.position = Vector3.Lerp(initPos, _actionPos.position, time);
+                        time += Time.deltaTime * 2.0f;
+                        yield return null;
+                    }
+                }
+
                 var eventPrefab = Resources.Load(string.Format(EventPrefabPath, data.EventID.ToString())) as GameObject;
                 var eventBase = Instantiate(eventPrefab).GetComponent<EventBase>();
                 eventBase.Init(data.Name, data.EventID == 6);
@@ -97,6 +113,17 @@ public class GameController : MonoBehaviour
                 Debug.Log(eventBase.name + "再生");
                 yield return new WaitWhile(() => !eventBase.EventEnd);
                 Destroy(eventBase.gameObject);
+
+                if (data.EventID < 6)
+                {
+                    float time = 0.0f;
+                    while (time < 1.0f)
+                    {
+                        actionChara.position = Vector3.Lerp(_actionPos.position, initPos, time);
+                        time += Time.deltaTime * 2.0f;
+                        yield return null;
+                    }
+                }
             }
             // 再生しない場合、1秒だけ待つ
             else
