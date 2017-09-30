@@ -137,7 +137,8 @@ public class GameController : MonoBehaviour
         // TODO : 何か実装
         yield return new WaitForSeconds(1.0f);
         Debug.Log("終了");
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneChanger.Instance.ChangeScene("End", 1.0f, true);
+        //UnityEditor.EditorApplication.isPlaying = false;
         yield break;
 	}
 

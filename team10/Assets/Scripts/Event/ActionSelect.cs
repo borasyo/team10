@@ -19,6 +19,9 @@ public class ActionSelect : EventBase
     [SerializeField] private float min = 0.5f;
     [SerializeField] private float max = 1.5f;
 
+    // カーソル移動サンド
+    [SerializeField] AudioSource _se = null;
+
     /// <summary>
     /// 生成時処理
     /// </summary>
@@ -43,8 +46,8 @@ public class ActionSelect : EventBase
             {
                 waitTime = Random.Range(min, max);
                 index += Random.Range(0, 2) == 0 ? -1 : 1;
-                if (index < 0) index = 0;
-                else if (index > 2) index = 2;
+                if (index < 0) index = 2;
+                else if (index > 2) index = 0;
             }
             else
             {
@@ -54,6 +57,7 @@ public class ActionSelect : EventBase
 
             remainTime -= waitTime;
             TextAnimator.Instance.DirectInsertMassage(CreateInsertMessage(index));
+            _se.Play();
             yield return new WaitForSeconds(waitTime);
         }
 

@@ -35,7 +35,7 @@ public class TextAnimator : MonoBehaviour
         _text.text = "";
 
         // アニメーション実行！
-        int loopCount = 0;
+        int loopCount = 1;
         while (loopCount < message.Length)
         {
             // テキストを更新
@@ -45,8 +45,18 @@ public class TextAnimator : MonoBehaviour
             if (_se)
                 _se.Play();
 
-            // 指定秒数待ち、カウントを増加
-            yield return new WaitForSeconds(_interval);
+            int lastIndex = _text.text.Length - 1;
+            if (_text.text.Substring(lastIndex) == "！" &&
+                message.Substring(loopCount, 1) != "！")
+            {
+                // ！なので、少し多めに待つ
+                yield return new WaitForSeconds(0.5f);
+            }
+            else
+            {
+                // 指定秒数待ち、カウントを増加
+                yield return new WaitForSeconds(_interval);
+            }
             loopCount++;
         }
     }
