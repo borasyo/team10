@@ -5,6 +5,7 @@ using UnityEngine;
 public class NoteRainEffect : EventBase
 {
     ParticleSystem _effect = null;
+    [SerializeField] GameObject _explosionPrefab = null;
 
     /// <summary>
     /// 生成時処理
@@ -13,6 +14,7 @@ public class NoteRainEffect : EventBase
     {
         _effect = GetComponentInChildren<ParticleSystem>();
         transform.position = new Vector3(-0.77f, -0.5f, 0);
+        StartCoroutine(ExplosionSound());
 	}
 
     /// <summary>
@@ -25,4 +27,18 @@ public class NoteRainEffect : EventBase
 
         EventEnd = true;
 	}
+
+    IEnumerator ExplosionSound()
+    {
+        yield return new WaitForSeconds(2.75f);
+
+        while (true)
+        {
+            if (Random.Range(0, 10) == 0)
+            {
+                Instantiate(_explosionPrefab);
+            }
+            yield return null;
+        }
+    }
 }

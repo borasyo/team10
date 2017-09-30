@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04042e6ecec7ff47a427326b5dd776d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 2
   _teaCup: {fileID: 1357671740595944}
   _healEffectPrefab: {fileID: 1145650805742916, guid: 7233a1c2f63d19341888760017887685,
     type: 2}

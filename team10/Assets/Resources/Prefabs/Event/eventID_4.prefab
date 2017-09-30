@@ -175,7 +175,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 40f18a405f246864f846452ea97f6be8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d0981c080bd0a9e4bbb55064c1826b99, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -257,6 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455eda18636ed5e44b2291af837d32dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosionPrefab: {fileID: 1762483061221188, guid: 5401007843f5812479b6d50bb40e381a,
+    type: 2}
 --- !u!114 &114824617882657130
 MonoBehaviour:
   m_ObjectHideFlags: 1
