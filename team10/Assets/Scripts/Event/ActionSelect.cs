@@ -35,8 +35,11 @@ public class ActionSelect : EventBase
     /// </summary>
     private IEnumerator Run()
     {
-        float remainTime = Time;
+        // 初期化処理
+        float remainTime = Time - Random.Range(min, max);
         int index = 0;
+        TextAnimator.Instance.DirectInsertMassage(CreateInsertMessage(index));
+        yield return new WaitForSeconds(Time - remainTime);
 
         // 実行 
         while (remainTime > 0.0f)
