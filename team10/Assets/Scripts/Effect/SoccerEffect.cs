@@ -36,7 +36,7 @@ public class SoccerEffect : EventBase
             Bezier.t += Time.deltaTime * _speed;
             _speed += _speed * 0.1f;
             transform.position = BezierCurve.CulcBez(Bezier);
-            //transform.eulerAngles += new Vector3(0, 0, _rotAmount);
+            transform.eulerAngles += new Vector3(0, 0, _rotAmount);
             yield return null;
         }
 

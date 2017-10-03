@@ -7,7 +7,7 @@ using System.Reflection;
 
 public class MasterTableBase<T> where T : MasterBase, new()
 {
-    protected List<T> masters;
+    protected List<T> masters = new List<T>();
     public List<T> All { get { return masters; } }
 
     public IEnumerator LoadCourutine(string URL)
@@ -27,7 +27,7 @@ public class MasterTableBase<T> where T : MasterBase, new()
         lines.RemoveAt(0); // header
 
         // body
-        masters = new List<T>();
+        //masters = new List<T>();
         foreach (var line in lines)
         {
             ParseLine(line, headerElements);
