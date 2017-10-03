@@ -43,6 +43,7 @@ public class GameController : MonoBehaviour
 
         // TODO : 仮のロード待ち
         yield return new WaitWhile(() => masterTable.All.Count == 0);
+        yield return new WaitWhile(() => CommentManager.Instance.GetCommentDatas.Count == 0);
 
         // シナリオマスターをキューに格納
         foreach (GameDataMaster master in masterTable.All)

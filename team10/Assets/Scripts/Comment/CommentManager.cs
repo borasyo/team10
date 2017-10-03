@@ -15,6 +15,7 @@ public class CommentManager : MonoBehaviour
 
     [SerializeField] GameObject commentObj;
     private List<CommentDataMaster> commentDatas = new List<CommentDataMaster>();
+    public List<CommentDataMaster> GetCommentDatas { get { return commentDatas; } }
 
     #region Singleton
     private static CommentManager instance;
