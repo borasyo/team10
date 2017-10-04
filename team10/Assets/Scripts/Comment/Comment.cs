@@ -21,9 +21,9 @@ public class Comment : MonoBehaviour {
 	}
 
 	private void Start() {
-		endPos = new Vector3(-TextMeshUtil.GetWidth(textMesh) * 3 * transform.localScale.x - 9, startPos.y, 0);
 		textMesh.text = commendData.Comment;
 		textMesh.color = commendData.CommentColor;
+		endPos = new Vector3(-TextMeshUtil.GetWidth(textMesh) * transform.localScale.x - 9, startPos.y, 0);
 		if (commendData.IsBold) textMesh.fontStyle = FontStyle.Bold;
 	}
 
